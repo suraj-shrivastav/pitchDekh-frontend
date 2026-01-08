@@ -73,6 +73,7 @@ export const UploadProvider = ({ children }) => {
 
     const uploadPitch = async (file) => {
         if (!session?.access_token) return;
+        console.log(file.name);
 
         try {
             setLoading(true);
@@ -130,4 +131,6 @@ export const UploadProvider = ({ children }) => {
     );
 };
 
-export const useUpload = () => useContext(UploadContext);
+export const useUpload = () => {
+    return useContext(UploadContext)
+};
